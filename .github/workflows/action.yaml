@@ -33,7 +33,7 @@ jobs:
       runs-on: ubuntu-latest
       needs: build
       steps:
-        - name: Download Artifact
+        - name: Download Artifacts
           uses: actions/download-artifact@v4
           with:
              name: zipped-bundle

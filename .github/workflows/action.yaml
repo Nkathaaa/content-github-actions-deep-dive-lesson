@@ -16,6 +16,7 @@ jobs:
           python-version: 3.8
       - name: Install linting libraries
         run: |
+             pwd
              cd function
              pip install flake8
       - name: Lint with flake8
@@ -37,11 +38,13 @@ jobs:
           python-version: 3.8
       - name: Install librariees
         run: |
+            pwd
             cd function
             python -m pip install --upgrade pip
             if [ -f requirements.txt ]; then pip install -r requirements.txt -t.; fi
       - name: Create zip bundle      
         run: |
+            pwd
             cd function 
             zip -r ../${{ github.sha }}.zip .
       - name: Archive artifact
